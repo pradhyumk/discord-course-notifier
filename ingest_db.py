@@ -4,43 +4,29 @@ import argparse
 import requests
 import logging
 
-
 if __name__ == "__main__":
     argparser = argparse.ArgumentParser(
         prog="ingest_db",
-        description='Ingests Rutgers course and section information to a MongoDB database.',
+        description=
+        'Ingests Rutgers course and section information to a MongoDB database.',
         add_help=True,
-        allow_abbrev=True
-    )
+        allow_abbrev=True)
 
-    argparser.add_argument(
-        '--year',
-        '-Y',
-        type=int,
-        help='Year to query'
-    )
+    argparser.add_argument('--year', '-Y', type=int, help='Year to query')
 
-    argparser.add_argument(
-        '--term',
-        '-T',
-        type=int,
-        help='Term to query'
-    )
+    argparser.add_argument('--term', '-T', type=int, help='Term to query')
 
-    argparser.add_argument(
-        '--campus',
-        '-C',
-        type=str,
-        default='NB',
-        help='Campus to query'
-    )
+    argparser.add_argument('--campus',
+                           '-C',
+                           type=str,
+                           default='NB',
+                           help='Campus to query')
 
     argparser.add_argument(
         '--database',
         '-D',
         type=str,
-        help='MongoDB (Python 3.6 or higher) connection string.'
-    )
+        help='MongoDB (Python 3.6 or higher) connection string.')
 
     args = argparser.parse_args()
 
